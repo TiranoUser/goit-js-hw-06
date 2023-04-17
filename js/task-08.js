@@ -2,13 +2,13 @@ const form = document.querySelector('.login-form');
 
 form.addEventListener('submit', submitFu);
 
-const emailEl = document.getElementsByName('email')[0];
-const passwordEl = document.getElementsByName('password')[0];
-
 function submitFu(event) {
   event.preventDefault();
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
 
-  if (emailEl.value && passwordEl.value) {
+  if (email.value && password.value) {
     const formData = new FormData(event.currentTarget);
     const emailObj = {};
     formData.forEach((value, name) => {

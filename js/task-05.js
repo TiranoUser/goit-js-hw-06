@@ -4,8 +4,7 @@ const nameOutput = document.getElementById('name-output');
 
 nameInput.addEventListener('input', (event) => {
   nameOutput.textContent = event.currentTarget.value;
-  console.dir(nameOutput.textContent);
-  if (nameOutput.textContent === '') {
+  if (nameOutput.textContent.trim() === '') {
     nameOutput.textContent = 'Anonymous';
   }
 });

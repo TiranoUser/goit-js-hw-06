@@ -9,7 +9,7 @@ const btnEl = document.querySelector('.change-color');
 btnEl.addEventListener('click', changeColorFn);
 
 function changeColorFn(event) {
-  spanEl.style.color = getRandomHexColor();
-  spanEl.style.backgroundColor = getRandomHexColor();
-  document.body.style.backgroundColor = getRandomHexColor();
+  const color = getRandomHexColor();
+  btnEl.textContent = color;
+  document.body.style.backgroundColor = color;
 }

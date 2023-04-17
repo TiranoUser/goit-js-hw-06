@@ -1,21 +1,14 @@
 const inputEl = document.querySelector('#validation-input');
-console.log(inputEl);
 
 inputEl.addEventListener('blur', chekInput);
 
-console.log(inputEl.id);
-
 function chekInput(event) {
-  if (
-    inputEl.value.length > inputEl.dataset.length ||
-    inputEl.value.length < inputEl.dataset.length
-  ) {
-    inputEl.classList.add('invalid');
-    inputEl.classList.remove('valid');
-    // console.log('много или мало символов');
-  } else {
-    inputEl.classList.add('valid');
-    inputEl.classList.remove('invalid');
-    // console.log('Все Ок ');
-  }
+  inputEl.value.length === parseInt(inputEl.dataset.length)
+    ? changeClass('valid', 'invalid')
+    : changeClass('invalid', 'valid');
+}
+
+function changeClass(addClass, removeClass) {
+  inputEl.classList.add(addClass);
+  inputEl.classList.remove(removeClass);
 }
